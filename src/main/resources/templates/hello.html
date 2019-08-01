@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+    当前登录用户:<shiro:principal/>
+    <h1 th:text="${key}"></h1>
+    <div shiro:hasPermission="user:add">
+        <a href="/shiro/add">用户添加</a>
+    </div>
+    <div shiro:hasPermission="user:update">
+        <a href="/shiro/update">用户更新</a>
+    </div>
+
+    <a href="/logout">退出登录</a>
+</body>
+</html>

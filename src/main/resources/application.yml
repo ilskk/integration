@@ -1,0 +1,49 @@
+#server配置
+server:
+  port: 8080
+#配置数据源
+database: mybatis
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost/${database}?serverTimezone=UTC
+      username: root
+      password: 123456
+#durid配置
+#      initial-size: 5
+#      max-active: 30
+#      min-idle: 3
+#      max-wait: 15000
+#      validation-query: SELECT 'x' #验证链接
+#配置监控页面
+#      login-username: admin
+#      login-password: 6666
+#      urlMappings: '/druid/*'
+#      web-stat-filter:
+#        urlPattens: '/*'
+#        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+#redis配置
+#  redis:
+#    host: 192.168.80.100
+#activeMQ配置
+#  activemq:
+#    broker-url: tcp://192.168.0.111:61616 #MQ服务器地址
+#    user: admin
+#    password: admin
+#  jms:
+#    pub-sub-domain: true #false=Queue,true=Topic
+#自定义目的地
+myqueue: boot-activemq-queue
+mytopic: boot-activemq-topic
+#mybatis配置
+mybatis:
+  configuration:                                    #打印sql到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helperDialect: mysql                 #分页插件数据库选择
+  reasonable: true                    #合理化参数，设为true时pageNum<=0 时会查第一页， pageNum>pages（超过总数时），会查询最后一页
+  supportMethodsArguments: true
+
+
