@@ -5,7 +5,6 @@ import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.jms.Queue;
 import javax.jms.Topic;
 import java.util.UUID;
 
